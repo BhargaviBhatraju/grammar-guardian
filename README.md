@@ -81,8 +81,8 @@ Add your project screenshots inside a **screenshots** folder.
 Example:
 
 ```
-screenshots/home.png
-screenshots/result.png
+wedsite pics/home.png.png
+wedsite pics/result.png.png
 ```
 
 ---
