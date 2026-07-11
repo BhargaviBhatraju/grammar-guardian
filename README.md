@@ -1,6 +1,6 @@
 # Grammar Guardian
 
-An AI-powered Grammar Correction framework using T5 and JFlEG dataset
+An AI-powered Grammar Correction framework using T5 and JFLEG dataset
 ---
 ##  Project Overview
 
