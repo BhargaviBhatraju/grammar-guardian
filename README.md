@@ -77,10 +77,10 @@ She goes to school every day.
 ##  Screenshots
 
 ### Home Page
-![Home](website%20pics/home.png)
+![Home](website pics/home.png.)
 
 ### Result Page
-![Result](website%20pics/result.png)
+![Result](website pics/result.png)
 
 ## Future Enhancements
 
