@@ -74,18 +74,15 @@ she go to school everyday
 ```text
 She goes to school every day.
 ```
-##  Screenshots
+## 📸 Screenshots
 
-Add your project screenshots inside a **screenshots** folder.
+### Home Page
 
-Example:
+![Home Page](website pics/home.png)
 
-```
-wedsite pics/home.png.png
-wedsite pics/result.png.png
-```
+### Grammar Correction
 
----
+![Grammar Correction](website pics/result.png)
 
 ## Future Enhancements
 
