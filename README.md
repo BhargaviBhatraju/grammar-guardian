@@ -52,7 +52,6 @@ http://127.0.0.1:5000
 ```
 
 ---
-
 ##  Workflow
 
 1. Enter an English sentence.
@@ -74,13 +73,15 @@ she go to school everyday
 ```text
 She goes to school every day.
 ```
-##  Screenshots
+## Screenshots
 
 ### Home Page
-![Home](website pics/home.png.)
+
+![Home](website%20pics/home.png.png)
 
 ### Result Page
-![Result](website pics/result.png)
+
+![Result](website%20pics/result.png.png)
 
 ## Future Enhancements
 
