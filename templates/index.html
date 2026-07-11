@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Grammar Guardian</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='Style.css') }}">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="container">
+
+        <h1>Grammar Guardian</h1>
+
+        <p>
+            AI Powered Grammar Correction Framework
+        </p>
+
+        <nav>
+
+            <a href="/">Home</a>
+
+            <a href="/about">About</a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+<section class="hero">
+
+    <div class="container">
+
+        <h2>
+            Improve Your Grammar Instantly
+        </h2>
+
+        <p>
+
+            Enter your sentence below and let AI
+            correct grammar, spelling and sentence
+            structure.
+
+        </p>
+
+    </div>
+
+</section>
+
+<section class="main-section">
+
+<div class="container">
+
+<label>
+
+Enter Your Sentence
+
+</label>
+
+<textarea
+
+id="inputText"
+
+placeholder="Type your sentence here...">
+
+</textarea>
+
+<div class="button-group">
+
+<button id="correctBtn">
+
+Correct Grammar
+
+</button>
+
+<button id="clearBtn">
+
+Clear
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+<section class="output-section">
+
+    <div class="container">
+
+        <h2>Corrected Sentence</h2>
+
+        <div id="outputBox">
+
+            Your corrected sentence will appear here...
+
+        </div>
+
+        <div class="statistics">
+
+            <div class="card">
+
+                <h3>Words</h3>
+
+                <p id="wordCount">0</p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Characters</h3>
+
+                <p id="charCount">0</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="loading-section">
+
+    <div class="container">
+
+        <div id="loading" class="loading">
+
+            Correcting Grammar...
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+
+    <div class="container">
+
+        <p>
+
+            Grammar Guardian © 2026
+
+        </p>
+
+    </div>
+
+</footer>
+
+<script>
+
+const inputText = document.getElementById("inputText");
+const outputBox = document.getElementById("outputBox");
+const wordCount = document.getElementById("wordCount");
+const charCount = document.getElementById("charCount");
+const loading = document.getElementById("loading");
+
+document.getElementById("correctBtn").addEventListener("click", async () => {
+
+    const text = inputText.value.trim();
+
+    if(text === ""){
+
+        alert("Please enter a sentence.");
+
+        return;
+    }
+
+    loading.style.display = "block";
+
+    try{
+
+        const response = await fetch("/correct",{
+
+            method:"POST",
+
+            headers:{
+                "Content-Type":"application/json"
+            },
+
+            body:JSON.stringify({
+                text:text
+            })
+
+        });
+
+        const data = await response.json();
+
+        loading.style.display="none";
+
+        if(data.success){
+
+            outputBox.innerText = data.corrected;
+
+            wordCount.innerText = data.word_count;
+
+            charCount.innerText = data.character_count;
+
+        }else{
+
+            outputBox.innerText = data.message;
+
+        }
+
+    }
+
+    catch(error){
+
+        loading.style.display="none";
+
+        outputBox.innerText="Something went wrong.";
+
+    }
+
+});
+
+document.getElementById("clearBtn").addEventListener("click",()=>{
+
+    inputText.value="";
+
+    outputBox.innerText="Your corrected sentence will appear here...";
+
+    wordCount.innerText="0";
+
+    charCount.innerText="0";
+
+});
+
+</script>
+
+</body>
+
+</html>
