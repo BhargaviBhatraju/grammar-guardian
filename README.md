@@ -78,11 +78,11 @@ She goes to school every day.
 
 ### Home Page
 
-![Home Page](website pics/home.png)
+![Home Page](website pics/home.png.png)
 
 ### Grammar Correction
 
-![Grammar Correction](website pics/result.png)
+![Grammar Correction](website pics/result.png.png)
 
 ## Future Enhancements
 
