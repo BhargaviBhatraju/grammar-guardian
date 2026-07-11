@@ -74,15 +74,13 @@ she go to school everyday
 ```text
 She goes to school every day.
 ```
-## 📸 Screenshots
+##  Screenshots
 
 ### Home Page
+![Home](website%20pics/home.png)
 
-![Home Page](website pics/home.png.png)
-
-### Grammar Correction
-
-![Grammar Correction](website pics/result.png.png)
+### Result Page
+![Result](website%20pics/result.png)
 
 ## Future Enhancements
 
